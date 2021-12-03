@@ -1,9 +1,25 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import useTrans from '../libs/hooks/useTrans'
 import styles from '../styles/Home.module.css'
-
+import Link from 'next/link'
 const Home: NextPage = () => {
+
+  const t = useTrans();
+  const router = useRouter();
+
+  const changeLang = (lang: string) => {
+      // router.push('/', '/', { locale: lang })
+      router.push(router.asPath, router.asPath, { locale: lang })
+  }
+
+  const handleClick = () => {
+    console.log('router:', router);
+    
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +31,14 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {t.common['success-message']}
         </h1>
-
+        <button onClick={() => changeLang('vi')} >vi</button>
+        <button onClick={() => changeLang('en')}>en</button>
+        <button onClick={handleClick}>show router</button>
+        <Link href="/blog">
+          go to blog
+        </Link>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>

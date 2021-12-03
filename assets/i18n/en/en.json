@@ -1,0 +1,11 @@
+{
+  "common": {
+    "error-message": "Error!",
+    "success-message": "Success!",
+    "a": {
+      "b": {
+        "c": "c en"
+      }
+    }
+  }
+}

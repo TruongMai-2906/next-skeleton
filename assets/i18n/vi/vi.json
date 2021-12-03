@@ -1,0 +1,11 @@
+{
+  "common": {
+    "error-message": "Lỗi rồi :(",
+    "success-message": "Thành công :)",
+    "a": {
+      "b": {
+        "c": "c vi"
+      }
+    }
+  }
+}
